@@ -1,4 +1,5 @@
 # Build and Release Folders
+bin
 bin-debug/
 bin-release/
 
@@ -7,3 +8,4 @@ bin-release/
 .flexProperties
 .settings/
 .project
+*.iml

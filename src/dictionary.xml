@@ -1,0 +1,120 @@
+<dictionary version="2012.11.8/4">
+    <nouns>
+        <noun name="gato">
+            <form spanish="el gato" russian="кот" />
+        </noun>
+        <noun name="niño">
+            <form spanish="el niño" russian="мальчик, ребёнок" />
+        </noun>
+        <noun name="niña">
+            <form spanish="la niña" russian="девочка" />
+            <form spanish="la niña" russian="зрачок" />
+        </noun>
+        <noun name="pasillo">
+            <form spanish="el pasillo" russian="коридор" />
+        </noun>
+        <noun name="jardín">
+            <form spanish="el jardín" russian="сад" />
+        </noun>
+        <noun name="bolsa">
+            <form spanish="la bolsa" russian="сумка" />
+        </noun>
+        <noun name="silla">
+            <form spanish="la silla" russian="стул" />
+        </noun>
+        <noun name="azul">
+            <form spanish="el azul" russian="синий цвет" />
+        </noun>
+        <noun name="rojo">
+            <form spanish="el rojo" russian="красный цвет" />
+        </noun>
+        <noun name="verde">
+            <form spanish="el verde" russian="зелёный цвет" />
+        </noun>
+
+        <noun name="enero">
+            <form spanish="el enero" russian="январь" />
+        </noun>
+        <noun name="febrero">
+            <form spanish="el febrero" russian="февраль" />
+        </noun>
+        <noun name="marzo">
+            <form spanish="el marzo" russian="март" />
+        </noun>
+        <noun name="abril">
+            <form spanish="el abril" russian="апрель" />
+        </noun>
+        <noun name="mayo">
+            <form spanish="el mayo" russian="май" />
+        </noun>
+        <noun name="junio">
+            <form spanish="el junio" russian="июнь" />
+        </noun>
+        <noun name="julio">
+            <form spanish="el julio" russian="июль" />
+        </noun>
+        <noun name="agosto">
+            <form spanish="el agosto" russian="август" />
+        </noun>
+        <noun name="septiembre">
+            <form spanish="el septiembre" russian="сентябрь" />
+        </noun>
+        <noun name="octubre">
+            <form spanish="el octubre" russian="октябрь" />
+        </noun>
+        <noun name="noviembre">
+            <form spanish="el noviembre" russian="ноябрь" />
+        </noun>
+        <noun name="diciembre">
+            <form spanish="el diciembre" russian="декабрь" />
+        </noun>
+
+        <noun name="lunes">
+            <form spanish="el lunes" russian="понедельник" />
+        </noun>
+        <noun name="martes">
+            <form spanish="el martes" russian="вторник" />
+        </noun>
+        <noun name="miércoles">
+            <form spanish="el miércoles" russian="среда" />
+        </noun>
+        <noun name="jueves">
+            <form spanish="el jueves" russian="четверг" />
+        </noun>
+        <noun name="viernes">
+            <form spanish="el viernes" russian="пятница" />
+        </noun>
+        <noun name="sábado">
+            <form spanish="el sábado" russian="суббота" />
+        </noun>
+        <noun name="domingo">
+            <form spanish="el domingo" russian="воскресенье" />
+        </noun>
+
+        <noun name="primavera">
+            <form spanish="la primavera" russian="весна" />
+        </noun>
+        <noun name="verano">
+            <form spanish="el verano" russian="лето" />
+        </noun>
+        <noun name="otoño">
+            <form spanish="el otoño" russian="осень" />
+        </noun>
+        <noun name="invierno">
+            <form spanish="el invierno" russian="зима" />
+        </noun>
+
+        <noun name="casa">
+            <form spanish="la casa" russian="дом" />
+        </noun>
+        <noun name="profesor">
+            <form spanish="profesor" russian="профессор" />
+        </noun>
+        <noun name="hijo">
+            <form spanish="el hijo" russian="сын" />
+        </noun>
+        <noun name="hija">
+            <form spanish="la hija" russian="дочь" />
+        </noun>
+    </nouns>
+</dictionary>
