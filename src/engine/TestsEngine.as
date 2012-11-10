@@ -26,9 +26,9 @@ package engine {
 			var sql:String = "";
 			sql += "CREATE TABLE IF NOT EXISTS tests (";
 			sql += " id INTEGER PRIMARY KEY AUTOINCREMENT,";
-			sql += " russian String CHECK (russian != ''),";
+			sql += " question String CHECK (question != ''),";
 			sql += " prefix String,";
-			sql += " spanish String CHECK (spanish != ''),";
+			sql += " answer String CHECK (answer != ''),";
 			sql += " passed int CHECK (passed >= 0) DEFAULT 0,";
 			sql += " whenTested INTEGER";
 			sql += ")";
@@ -39,7 +39,7 @@ package engine {
 //			trace(con.getSchemaResult().tables);
 			insertTestStm = new SQLStatement();
 			insertTestStm.sqlConnection = con;
-			sql = "INSERT INTO tests (russian, prefix, spanish, whenTested) ";
+			sql = "INSERT INTO tests (question, prefix, answer, whenTested) ";
 			sql += "VALUES (:russian, :prefix, :spanish, :whenTested)";
 			insertTestStm.text = sql;
 			insertTestStm.parameters[":russian"] = "дом";
@@ -50,17 +50,30 @@ package engine {
 
 			hasTestStm = new SQLStatement();
 			hasTestStm.sqlConnection = con;
-			sql = "SELECT id FROM tests WHERE russian=:russian AND prefix=:prefix AND spanish=:spanish";
+			sql = "SELECT id FROM tests WHERE question=:russian AND prefix=:prefix AND answer=:spanish";
 			hasTestStm.text = sql;
 			hasTestStm.parameters[":russian"] = "кот";
 			hasTestStm.parameters[":prefix"] = "a";
 			hasTestStm.parameters[":spanish"] = "el gato";
 //			selectStmt.execute();
 
+			// passed 0 : get all
+			// passed 1 : get 1 day old
+			// passed 2 : get 2 days old
+			// passed 3 : get 1 week old
+			// passed 4 : get 2 weeks old
+			// passed 5 : get 1 month old
 			selectTestStm = new SQLStatement();
 			selectTestStm.sqlConnection = con;
 			selectTestStm.itemClass = SimpleTest;
-			var sql:String = "SELECT id, russian, prefix, spanish, passed FROM tests WHERE passed=0 ORDER BY whenTested LIMIT 1";
+			sql = "SELECT id, question, prefix, answer, passed FROM tests WHERE passed=0 ";
+			sql += "OR (passed=1 AND whenTested<:oneDayAgo) ";
+			sql += "OR (passed=2 AND whenTested<:twoDaysAgo) ";
+			sql += "OR (passed=3 AND whenTested<:oneWeekAgo) ";
+			sql += "OR (passed=4 AND whenTested<:twoWeeksAgo) ";
+			sql += "OR (passed=5 AND whenTested<:oneMonthAgo) ";
+//			sql += "ORDER BY whenTested LIMIT 1";
+			sql += "ORDER BY whenTested LIMIT 100";
 			selectTestStm.text = sql;
 
 			updateTestStm = new SQLStatement();
@@ -102,6 +115,12 @@ package engine {
 
 		public function selectTest():void {
 			// find next unpassed test
+			var today:Number = int((new Date()).time/1000);
+			selectTestStm.parameters[":oneDayAgo"] = today - 24*60*60;
+			selectTestStm.parameters[":twoDaysAgo"] = today - 48*60*60;
+			selectTestStm.parameters[":oneWeekAgo"] = today - 7*24*60*60;
+			selectTestStm.parameters[":twoWeeksAgo"] = today - 14*24*60*60;
+			selectTestStm.parameters[":oneMonthAgo"] = today - 30*24*60*60;
 			selectTestStm.execute();
 
 			var result:SQLResult = selectTestStm.getResult();
@@ -131,7 +150,7 @@ package engine {
 		}
 
 		public function get russian():String {
-			return (_currentTest == null ? "" : _currentTest.russian);
+			return (_currentTest == null ? "" : _currentTest.question);
 		}
 
 		public function get prefix():String {
@@ -139,7 +158,7 @@ package engine {
 		}
 
 		public function get spanish():String {
-			return (_currentTest == null ? "" : _currentTest.spanish);
+			return (_currentTest == null ? "" : _currentTest.answer);
 		}
 
 	}

@@ -38,6 +38,7 @@ package {
 			addChild(exerciseZone);
 
 			exerciseWord = new TextField();
+			exerciseWord.mouseEnabled = false;
 			exerciseWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
 			exerciseWord.text = "яблоко";
 			exerciseWord.selectable = false;
@@ -53,6 +54,7 @@ package {
 			exerciseWord.text = words.russian;
 
 			prefixWord = new TextField();
+			prefixWord.mouseEnabled = false;
 			prefixWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
 //			prefixWord.text = words.prefix + " ";
 			prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
@@ -61,6 +63,7 @@ package {
 			addChild(prefixWord);
 
 			resultWord = new TextField();
+			resultWord.mouseEnabled = false;
 			resultWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
 			resultWord.text = "";
 			resultWord.selectable = false;
@@ -84,6 +87,7 @@ package {
 			stream.close();
 
 			var so:SharedObject = SharedObject.getLocal("database");
+//			so.clear();
 			var version:String = so.data[versionKey];
 			if (version != content.@version.toString()) {
 				trace("import dict: " + path);
