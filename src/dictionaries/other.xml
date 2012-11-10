@@ -1,0 +1,58 @@
+<dictionary version="2012.11.10/12">
+    <words>
+        <word name="двадцать">
+            <form russian="двадцать" spanish="veinte" />
+        </word>
+        <word name="двадцать один">
+            <form russian="двадцать один" spanish="veintiuno" />
+        </word>
+        <word name="двадцать два">
+            <form russian="двадцать два" spanish="veintidós" />
+        </word>
+        <word name="двадцать три">
+            <form russian="двадцать три" spanish="veintitrés" />
+        </word>
+        <word name="двадцать четыре">
+            <form russian="двадцать четыре" spanish="veinticuatro" />
+        </word>
+        <word name="двадцать пять">
+            <form russian="двадцать пять" spanish="veinticinco" />
+        </word>
+        <word name="двадцать шесть">
+            <form russian="двадцать шесть" spanish="veintiséis" />
+        </word>
+        <word name="двадцать семь">
+            <form russian="двадцать семь" spanish="veintisiete" />
+        </word>
+        <word name="двадцать восемь">
+            <form russian="двадцать восемь" spanish="veintiocho" />
+        </word>
+        <word name="двадцать девять">
+            <form russian="двадцать девять" spanish="veintinueve" />
+        </word>
+        <word name="тридцать">
+            <form russian="тридцать" spanish="treinta" />
+        </word>
+        <word name="сорок">
+            <form russian="сорок" spanish="cuarenta" />
+        </word>
+        <word name="пятьдесят">
+            <form russian="пятьдесят" spanish="cincuenta" />
+        </word>
+        <word name="шестьдесят">
+            <form russian="шестьдесят" spanish="sesenta" />
+        </word>
+        <word name="семьдесят">
+            <form russian="семьдесят" spanish="setenta" />
+        </word>
+        <word name="восемьдесят">
+            <form russian="восемьдесят" spanish="ochenta" />
+        </word>
+        <word name="девяноста">
+            <form russian="девяноста" spanish="noventa" />
+        </word>
+        <word name="сто">
+            <form russian="сто" spanish="cien" />
+        </word>
+    </words>
+</dictionary>

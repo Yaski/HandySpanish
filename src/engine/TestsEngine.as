@@ -3,7 +3,6 @@ package engine {
 	import flash.data.SQLResult;
 	import flash.data.SQLStatement;
 	import flash.filesystem.File;
-	import flash.net.SharedObject;
 
 	public class TestsEngine {
 
@@ -13,10 +12,6 @@ package engine {
 		private var insertTestStm:SQLStatement;
 		private var selectTestStm:SQLStatement;
 		private var updateTestStm:SQLStatement;
-
-		private static function get sharedObject():SharedObject {
-			return SharedObject.getLocal("database");
-		}
 
 		public function TestsEngine() {
 		}
@@ -79,35 +74,28 @@ package engine {
 		}
 
 		public function importDictionary(dictionary:XML):void {
-			var so:SharedObject = sharedObject;
-//			so.clear();
-			var v:String = so.data["version"];
-
-			if (v != dictionary.@version.toString()) {
-				// regenerate tests
-				insertTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
-				var words:XMLList = dictionary.words.word;
-				for (var i:int = 0; i < words.length(); i++) {
-					var forms:XMLList = words[i].form;
-					for (var j:int = 0; j < forms.length(); j++) {
-						var form:XML = forms[j];
-						var rus:String = form.@russian.toString();
-						var spa:String = form.@spanish.toString();
-						var pre:String = form.@prefix == null ? "" : form.@prefix.toString();
-						hasTestStm.parameters[":russian"] = rus;
-						hasTestStm.parameters[":prefix"] = pre;
-						hasTestStm.parameters[":spanish"] = spa;
-						hasTestStm.execute();
-						var result:SQLResult = hasTestStm.getResult();
-						if (result.data == null || result.data.length == 0) {
-							insertTestStm.parameters[":russian"] = rus;
-							insertTestStm.parameters[":prefix"] = pre;
-							insertTestStm.parameters[":spanish"] = spa;
-							insertTestStm.execute();
-						}
+			// regenerate tests
+			insertTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
+			var words:XMLList = dictionary.words.word;
+			for (var i:int = 0; i < words.length(); i++) {
+				var forms:XMLList = words[i].form;
+				for (var j:int = 0; j < forms.length(); j++) {
+					var form:XML = forms[j];
+					var rus:String = form.@russian.toString();
+					var spa:String = form.@spanish.toString();
+					var pre:String = form.@prefix == null ? "" : form.@prefix.toString();
+					hasTestStm.parameters[":russian"] = rus;
+					hasTestStm.parameters[":prefix"] = pre;
+					hasTestStm.parameters[":spanish"] = spa;
+					hasTestStm.execute();
+					var result:SQLResult = hasTestStm.getResult();
+					if (result.data == null || result.data.length == 0) {
+						insertTestStm.parameters[":russian"] = rus;
+						insertTestStm.parameters[":prefix"] = pre;
+						insertTestStm.parameters[":spanish"] = spa;
+						insertTestStm.execute();
 					}
 				}
-				so.data["version"] = dictionary.@version.toString();
 			}
 			selectTest();
 		}
@@ -144,6 +132,10 @@ package engine {
 
 		public function get russian():String {
 			return (_currentTest == null ? "" : _currentTest.russian);
+		}
+
+		public function get prefix():String {
+			return (_currentTest == null ? "" : _currentTest.prefix);
 		}
 
 		public function get spanish():String {

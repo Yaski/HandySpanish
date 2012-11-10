@@ -7,6 +7,10 @@ package {
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
+	import flash.filesystem.FileStream;
+	import flash.net.SharedObject;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
@@ -17,9 +21,8 @@ package {
 	[SWF (width = 240, height = 400, frameRate = 40, backgroundColor = 0xFFFFFF)]
 	public class HandySpanish extends Sprite {
 
-		[Embed ("dictionary.xml", mimeType="application/octet-stream")] private static const DictionaryClass:Class;
-		
 		private var exerciseWord:TextField;
+		private var prefixWord:TextField;
 		private var resultWord:TextField;
 		private var keys:KeysPanel;
 
@@ -39,9 +42,19 @@ package {
 
 			words = new TestsEngine();
 			words.init();
-			words.importDictionary(XML(new DictionaryClass()));
+			loadDictionary("dictionaries/nouns.xml", "nounsVersion");
+			loadDictionary("dictionaries/verbs.xml", "verbsVersion");
+			loadDictionary("dictionaries/other.xml", "otherVersion");
 
 			exerciseWord.text = words.russian;
+
+			prefixWord = new TextField();
+			prefixWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
+//			prefixWord.text = words.prefix + " ";
+			prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
+			prefixWord.selectable = false;
+			prefixWord.autoSize = TextFieldAutoSize.LEFT;
+			addChild(prefixWord);
 
 			resultWord = new TextField();
 			resultWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
@@ -56,6 +69,22 @@ package {
 
 			stage.addEventListener(Event.RESIZE, onResize);
 			onResize();
+		}
+
+		private function loadDictionary(path:String, versionKey:String):void {
+			var file:File = File.applicationDirectory.resolvePath(path);
+			var stream:FileStream = new FileStream();
+			stream.open(file, FileMode.READ);
+			var content:XML = XML(stream.readUTFBytes(stream.bytesAvailable));
+			stream.close();
+
+			var so:SharedObject = SharedObject.getLocal("database");
+			var version:String = so.data[versionKey];
+			if (version != content.@version.toString()) {
+				trace("import dict: " + path);
+				words.importDictionary(content);
+				so.data[versionKey] = content.@version.toString();
+			}
 		}
 
 		private function onKeyClick(event:MouseEvent):void {
@@ -90,11 +119,13 @@ package {
 						words.selectTest();
 						if (words.russian == null) {
 							exerciseWord.visible = false;
+							prefixWord.visible = false;
 							resultWord.visible = false;
 							return;
 						} else {
 							currentCorrect = -1;
 							exerciseWord.text = words.russian;
+							prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
 							resultWord.text = "";
 							onResize();
 						}
@@ -114,12 +145,18 @@ package {
 			exerciseWord.x = (stage.stageWidth - exerciseWord.width) >> 1;
 			exerciseWord.y = hCoeff*30;
 
+			prefixWord.scaleX = scale;
+			prefixWord.scaleY = scale;
+
 			resultWord.scaleX = scale;
 			resultWord.scaleY = scale;
 			var text:String = resultWord.text;
 			resultWord.text = words.spanish;
-			resultWord.x = (stage.stageWidth - resultWord.width) >> 1;
-			resultWord.y = hCoeff*80;
+
+			prefixWord.x = (stage.stageWidth - prefixWord.width - resultWord.width) >> 1;
+			prefixWord.y = hCoeff*80;
+			resultWord.x = prefixWord.x + prefixWord.width;
+			resultWord.y = prefixWord.y;
 
 			var y:Number = resultWord.y + resultWord.height + hCoeff*5;
 			if (currentCorrect == -1) {

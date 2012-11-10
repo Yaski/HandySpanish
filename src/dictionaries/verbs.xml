@@ -1,0 +1,17 @@
+<dictionary version="2012.11.10/12">
+    <words>
+        <word name="tener">
+            <form russian="иметь" spanish="tener" />
+            <form russian="иметь" prefix="Yo" spanish="tengo" />
+            <form russian="иметь" prefix="tú" spanish="tienes" />
+            <form russian="иметь" prefix="él" spanish="tiene" />
+            <form russian="иметь" prefix="ella" spanish="tiene" />
+            <form russian="иметь" prefix="usted" spanish="tiene" />
+            <form russian="иметь" prefix="nosotros" spanish="tenemos" />
+            <form russian="иметь" prefix="vosotros" spanish="tenéis" />
+            <form russian="иметь" prefix="ellos" spanish="tienen" />
+            <form russian="иметь" prefix="ellas" spanish="tienen" />
+            <form russian="иметь" prefix="ustedes" spanish="tienen" />
+        </word>
+    </words>
+</dictionary>
