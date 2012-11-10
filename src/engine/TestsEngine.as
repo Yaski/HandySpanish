@@ -72,8 +72,8 @@ package engine {
 			sql += "OR (passed=3 AND whenTested<:oneWeekAgo) ";
 			sql += "OR (passed=4 AND whenTested<:twoWeeksAgo) ";
 			sql += "OR (passed=5 AND whenTested<:oneMonthAgo) ";
-//			sql += "ORDER BY whenTested LIMIT 1";
-			sql += "ORDER BY whenTested LIMIT 100";
+			sql += "ORDER BY whenTested LIMIT 1";
+//			sql += "ORDER BY whenTested LIMIT 100";
 			selectTestStm.text = sql;
 
 			updateTestStm = new SQLStatement();
