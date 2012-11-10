@@ -38,7 +38,8 @@ package {
 			addChild(exerciseWord);
 
 			words = new TestsEngine();
-			words.updateDictionary(XML(new DictionaryClass()));
+			words.init();
+			words.importDictionary(XML(new DictionaryClass()));
 
 			exerciseWord.text = words.russian;
 
@@ -86,7 +87,7 @@ package {
 						} else {
 							words.failTest();
 						}
-						words.nextTest();
+						words.selectTest();
 						if (words.russian == null) {
 							exerciseWord.visible = false;
 							resultWord.visible = false;

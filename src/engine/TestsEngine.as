@@ -1,14 +1,18 @@
 package engine {
+	import flash.data.SQLConnection;
+	import flash.data.SQLResult;
+	import flash.data.SQLStatement;
+	import flash.filesystem.File;
 	import flash.net.SharedObject;
-	import flash.net.registerClassAlias;
 
 	public class TestsEngine {
 
-		public var russian:String;
-		public var spanish:String;
+		private var _currentTest:SimpleTest;
 
-		private var tests:Array;
-		private var currentTestIndex:int = 0;
+		private var hasTestStm:SQLStatement;
+		private var insertTestStm:SQLStatement;
+		private var selectTestStm:SQLStatement;
+		private var updateTestStm:SQLStatement;
 
 		private static function get sharedObject():SharedObject {
 			return SharedObject.getLocal("database");
@@ -17,82 +21,133 @@ package engine {
 		public function TestsEngine() {
 		}
 
-		private function getReadyTest(tests:Array, russian:String, spanish:String):SimpleTest {
-			for (var i:int = 0; i < tests.length; i++) {
-				var test:SimpleTest = tests[i];
-				if (test.russian == russian && test.spanish == spanish) {
-					return test;
-				}
-			}
-			return null;
+		public function init():void {
+			var dbFile:File = File.applicationStorageDirectory.resolvePath("tests.db");
+//			trace("Database:", dbFile.nativePath);
+			var con:SQLConnection = new SQLConnection();
+			con.open(dbFile);
+			var createStmt:SQLStatement = new SQLStatement();
+			createStmt.sqlConnection = con;
+			var sql:String = "";
+			sql += "CREATE TABLE IF NOT EXISTS tests (";
+			sql += " id INTEGER PRIMARY KEY AUTOINCREMENT,";
+			sql += " russian String CHECK (russian != ''),";
+			sql += " prefix String,";
+			sql += " spanish String CHECK (spanish != ''),";
+			sql += " passed int CHECK (passed >= 0) DEFAULT 0,";
+			sql += " whenTested INTEGER";
+			sql += ")";
+			createStmt.text = sql;
+			createStmt.execute();
+//			con.loadSchema(SQLTableSchema);
+//			con.loadSchema();
+//			trace(con.getSchemaResult().tables);
+			insertTestStm = new SQLStatement();
+			insertTestStm.sqlConnection = con;
+			sql = "INSERT INTO tests (russian, prefix, spanish, whenTested) ";
+			sql += "VALUES (:russian, :prefix, :spanish, :whenTested)";
+			insertTestStm.text = sql;
+			insertTestStm.parameters[":russian"] = "дом";
+			insertTestStm.parameters[":prefix"] = "";
+			insertTestStm.parameters[":spanish"] = "la casa";
+			insertTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
+//			insertTestStm.execute();
+
+			hasTestStm = new SQLStatement();
+			hasTestStm.sqlConnection = con;
+			sql = "SELECT id FROM tests WHERE russian=:russian AND prefix=:prefix AND spanish=:spanish";
+			hasTestStm.text = sql;
+			hasTestStm.parameters[":russian"] = "кот";
+			hasTestStm.parameters[":prefix"] = "a";
+			hasTestStm.parameters[":spanish"] = "el gato";
+//			selectStmt.execute();
+
+			selectTestStm = new SQLStatement();
+			selectTestStm.sqlConnection = con;
+			selectTestStm.itemClass = SimpleTest;
+			var sql:String = "SELECT id, russian, prefix, spanish, passed FROM tests WHERE passed=0 ORDER BY whenTested LIMIT 1";
+			selectTestStm.text = sql;
+
+			updateTestStm = new SQLStatement();
+			updateTestStm.sqlConnection = con;
+			sql = "UPDATE tests SET passed=:passed, whenTested=:whenTested WHERE id=:id";
+			updateTestStm.text = sql;
+
+//			con.close();
+
+			selectTest();
 		}
 
-		public function updateDictionary(dictionary:XML):void {
-			// regenerate tests if needed
-			registerClassAlias("SimpleTest", SimpleTest);
-
+		public function importDictionary(dictionary:XML):void {
 			var so:SharedObject = sharedObject;
 //			so.clear();
 			var v:String = so.data["version"];
-			tests = so.data["tests"];
 
-			if (v != dictionary.@version.toString() || tests == null) {
+			if (v != dictionary.@version.toString()) {
 				// regenerate tests
-				var newTests:Array = [];
-				var nouns:XMLList = dictionary.nouns.noun;
-				for (var i:int = 0; i < nouns.length(); i++) {
-					var forms:XMLList = nouns[i].form;
+				insertTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
+				var words:XMLList = dictionary.words.word;
+				for (var i:int = 0; i < words.length(); i++) {
+					var forms:XMLList = words[i].form;
 					for (var j:int = 0; j < forms.length(); j++) {
 						var form:XML = forms[j];
 						var rus:String = form.@russian.toString();
 						var spa:String = form.@spanish.toString();
-						var test:SimpleTest = tests == null ? null : getReadyTest(tests, rus, spa);
-						if (test == null) {
-							test = new SimpleTest(rus, spa)
+						var pre:String = form.@prefix == null ? "" : form.@prefix.toString();
+						hasTestStm.parameters[":russian"] = rus;
+						hasTestStm.parameters[":prefix"] = pre;
+						hasTestStm.parameters[":spanish"] = spa;
+						hasTestStm.execute();
+						var result:SQLResult = hasTestStm.getResult();
+						if (result.data == null || result.data.length == 0) {
+							insertTestStm.parameters[":russian"] = rus;
+							insertTestStm.parameters[":prefix"] = pre;
+							insertTestStm.parameters[":spanish"] = spa;
+							insertTestStm.execute();
 						}
-						newTests.push(test);
 					}
 				}
-				tests = newTests;
-				so.data["tests"] = tests;
 				so.data["version"] = dictionary.@version.toString();
 			}
-			currentTestIndex = -1;
-			nextTest();
+			selectTest();
 		}
 
-		public function nextTest():void {
+		public function selectTest():void {
 			// find next unpassed test
-			var test:SimpleTest;
-			currentTestIndex++;
-			while (currentTestIndex < tests.length) {
-				test = tests[currentTestIndex];
-				if (test.passedCount == 0) {
-					break;
-				}
-				currentTestIndex++;
-			}
-			if (currentTestIndex < tests.length) {
-				russian = test.russian;
-				spanish = test.spanish;
+			selectTestStm.execute();
+
+			var result:SQLResult = selectTestStm.getResult();
+			if (result.data != null && result.data.length > 0) {
+				_currentTest = result.data[0];
 			} else {
-				russian = null;
-				spanish = null;
+				_currentTest = null;
 			}
 		}
 
 		public function passTest():void {
-			var test:SimpleTest = tests[currentTestIndex];
-			test.passedCount++;
-			test.lastPassedTime = (new Date()).valueOf();
-			sharedObject.data["tests"] = tests;
+			if (_currentTest == null) return;
+
+			updateTestStm.parameters[":id"] = _currentTest.id;
+			updateTestStm.parameters[":passed"] = _currentTest.passed + 1;
+			updateTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
+			updateTestStm.execute();
 		}
 
 		public function failTest():void {
-			var test:SimpleTest = tests[currentTestIndex];
-			test.passedCount = 0;
-			test.lastPassedTime = 0;
-			sharedObject.data["tests"] = tests;
+			if (_currentTest == null) return;
+
+			updateTestStm.parameters[":id"] = _currentTest.id;
+			updateTestStm.parameters[":passed"] = 0;
+			updateTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
+			updateTestStm.execute();
+		}
+
+		public function get russian():String {
+			return (_currentTest == null ? "" : _currentTest.russian);
+		}
+
+		public function get spanish():String {
+			return (_currentTest == null ? "" : _currentTest.spanish);
 		}
 
 	}

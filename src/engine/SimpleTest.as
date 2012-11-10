@@ -2,14 +2,13 @@ package engine {
 
 	public class SimpleTest {
 
+		public var id:Number;
 		public var russian:String;
+		public var prefix:String;
 		public var spanish:String;
-		public var passedCount:int = 0;
-		public var lastPassedTime:Number = 0;
+		public var passed:int = 0;
 
-		public function SimpleTest(russian:String = null, spanish:String = null) {
-			this.russian = russian;
-			this.spanish = spanish;
+		public function SimpleTest() {
 		}
 
 	}
