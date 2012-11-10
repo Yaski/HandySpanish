@@ -21,6 +21,7 @@ package {
 	[SWF (width = 240, height = 400, frameRate = 40, backgroundColor = 0xFFFFFF)]
 	public class HandySpanish extends Sprite {
 
+		private var exerciseZone:Sprite;
 		private var exerciseWord:TextField;
 		private var prefixWord:TextField;
 		private var resultWord:TextField;
@@ -32,6 +33,9 @@ package {
 		public function HandySpanish() {
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
+
+			exerciseZone = new Sprite();
+			addChild(exerciseZone);
 
 			exerciseWord = new TextField();
 			exerciseWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
@@ -67,6 +71,7 @@ package {
 			keys.addEventListener(MouseEvent.CLICK, onKeyClick);
 			addChild(keys);
 
+			exerciseZone.addEventListener(MouseEvent.CLICK, nextWord);
 			stage.addEventListener(Event.RESIZE, onResize);
 			onResize();
 		}
@@ -109,27 +114,30 @@ package {
 							onResize();
 						}
 					}
-					if (index == words.spanish.length - 1) {
-						// last symbol
-						if (currentCorrect == 1) {
-							words.passTest();
-						} else {
-							words.failTest();
-						}
-						words.selectTest();
-						if (words.russian == null) {
-							exerciseWord.visible = false;
-							prefixWord.visible = false;
-							resultWord.visible = false;
-							return;
-						} else {
-							currentCorrect = -1;
-							exerciseWord.text = words.russian;
-							prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
-							resultWord.text = "";
-							onResize();
-						}
-					}
+				}
+			}
+		}
+
+		private function nextWord(e:Event):void {
+			if (resultWord.text.length >= words.spanish.length) {
+				// full world
+				if (currentCorrect == 1) {
+					words.passTest();
+				} else {
+					words.failTest();
+				}
+				words.selectTest();
+				if (words.russian == null) {
+					exerciseWord.visible = false;
+					prefixWord.visible = false;
+					resultWord.visible = false;
+					return;
+				} else {
+					currentCorrect = -1;
+					exerciseWord.text = words.russian;
+					prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
+					resultWord.text = "";
+					onResize();
 				}
 			}
 		}
@@ -190,6 +198,10 @@ package {
 			resultWord.text = text;
 
 			var lineY:int = (stage.stageHeight >> 1) - hCoeff*50;
+
+			exerciseZone.graphics.clear();
+			exerciseZone.graphics.beginFill(0xFFFFFF, 0);
+			exerciseZone.graphics.drawRect(0, 0, stage.stageWidth, lineY + hCoeff*5);
 
 			graphics.beginFill(0x0);
 			graphics.drawRect(0, lineY, stage.stageWidth, hCoeff*5);

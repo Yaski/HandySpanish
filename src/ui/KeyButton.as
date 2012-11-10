@@ -16,6 +16,8 @@ package ui {
 			autoSize = TextFieldAutoSize.NONE;
 			border = true;
 			borderColor = 0x0;
+			background = true;
+			backgroundColor = 0xEFEFEF;
 			text = label;
 
 			this.x = x;
