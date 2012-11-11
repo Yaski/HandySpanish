@@ -12,6 +12,11 @@ package engine {
 		private var insertTestStm:SQLStatement;
 		private var selectTestStm:SQLStatement;
 		private var updateTestStm:SQLStatement;
+		private var rightAnswersCounterStm:SQLStatement;
+		private var restTestsCounterStm:SQLStatement;
+
+		private var _rightAnswersCount:int;
+		private var _restTestsCount:int;
 
 		public function TestsEngine() {
 		}
@@ -81,9 +86,29 @@ package engine {
 			sql = "UPDATE tests SET passed=:passed, whenTested=:whenTested WHERE id=:id";
 			updateTestStm.text = sql;
 
+			rightAnswersCounterStm = new SQLStatement();
+			rightAnswersCounterStm.sqlConnection = con;
+			sql = "SELECT COUNT(*) FROM tests WHERE passed>0";
+			rightAnswersCounterStm.text = sql;
+			restTestsCounterStm = new SQLStatement();
+			restTestsCounterStm.sqlConnection = con;
+			sql = "SELECT COUNT(*) FROM tests WHERE passed=0";
+			restTestsCounterStm.text = sql;
+
+			countTests();
 //			con.close();
 
 			selectTest();
+		}
+
+		private function countTests():void {
+			var result:SQLResult;
+			rightAnswersCounterStm.execute();
+			result = rightAnswersCounterStm.getResult();
+			_rightAnswersCount = (result.data == null || result.data.length == 0) ? 0 : result.data[0]["COUNT(*)"];
+			restTestsCounterStm.execute();
+			result = restTestsCounterStm.getResult();
+			_restTestsCount = (result.data == null || result.data.length == 0) ? 0 : result.data[0]["COUNT(*)"];
 		}
 
 		public function importDictionary(dictionary:XML):void {
@@ -110,6 +135,7 @@ package engine {
 					}
 				}
 			}
+			countTests();
 			selectTest();
 		}
 
@@ -134,6 +160,11 @@ package engine {
 		public function passTest():void {
 			if (_currentTest == null) return;
 
+			if (_currentTest.passed == 0) {
+				_rightAnswersCount++;
+				_restTestsCount--;
+			}
+
 			updateTestStm.parameters[":id"] = _currentTest.id;
 			updateTestStm.parameters[":passed"] = _currentTest.passed + 1;
 			updateTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
@@ -143,10 +174,23 @@ package engine {
 		public function failTest():void {
 			if (_currentTest == null) return;
 
+			if (_currentTest.passed > 0) {
+				_rightAnswersCount--;
+				_restTestsCount++;
+			}
+
 			updateTestStm.parameters[":id"] = _currentTest.id;
 			updateTestStm.parameters[":passed"] = 0;
 			updateTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
 			updateTestStm.execute();
+		}
+
+		public function get rightAnswersCount():int {
+			return _rightAnswersCount;
+		}
+
+		public function get restTestsCount():int {
+			return _restTestsCount;
 		}
 
 		public function get russian():String {

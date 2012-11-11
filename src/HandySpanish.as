@@ -21,6 +21,8 @@ package {
 	[SWF (width = 240, height = 400, frameRate = 40, backgroundColor = 0xFFFFFF)]
 	public class HandySpanish extends Sprite {
 
+		private var numRightInd:TextField;
+		private var numTestsInd:TextField;
 		private var exerciseZone:Sprite;
 		private var exerciseWord:TextField;
 		private var prefixWord:TextField;
@@ -37,6 +39,23 @@ package {
 			exerciseZone = new Sprite();
 			addChild(exerciseZone);
 
+			numRightInd = new TextField();
+			numRightInd.mouseEnabled = false;
+			numRightInd.defaultTextFormat = new TextFormat(null, 10, 0x7F7F7F);
+			numRightInd.text = "Верных: 100";
+			numRightInd.selectable = false;
+			numRightInd.autoSize = TextFieldAutoSize.LEFT;
+			addChild(numRightInd);
+
+			numTestsInd = new TextField();
+			numTestsInd.x = 100;
+			numTestsInd.mouseEnabled = false;
+			numTestsInd.defaultTextFormat = new TextFormat(null, 10, 0x7F7F7F);
+			numTestsInd.text = "Осталось: 100";
+			numTestsInd.selectable = false;
+			numTestsInd.autoSize = TextFieldAutoSize.LEFT;
+			addChild(numTestsInd);
+
 			exerciseWord = new TextField();
 			exerciseWord.mouseEnabled = false;
 			exerciseWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
@@ -50,6 +69,9 @@ package {
 			loadDictionary("dictionaries/nouns.xml", "nounsVersion");
 			loadDictionary("dictionaries/verbs.xml", "verbsVersion");
 			loadDictionary("dictionaries/other.xml", "otherVersion");
+
+			numRightInd.text = "Верных: " + words.rightAnswersCount;
+			numTestsInd.text = "Осталось: " + words.restTestsCount;
 
 			exerciseWord.text = words.russian;
 
@@ -130,6 +152,8 @@ package {
 				} else {
 					words.failTest();
 				}
+				numRightInd.text = "Верных: " + words.rightAnswersCount;
+				numTestsInd.text = "Осталось: " + words.restTestsCount;
 				words.selectTest();
 				if (words.russian == null) {
 					exerciseWord.visible = false;
@@ -147,10 +171,20 @@ package {
 		}
 
 		private function onResize(event:Event = null):void {
+			var wCoeff:Number = stage.stageWidth/240;
 			var hCoeff:Number = stage.stageHeight/400;
 			var scale:Number = Math.sqrt(stage.stageWidth*stage.stageWidth + stage.stageHeight*stage.stageHeight)/Math.sqrt(240*240 + 400*400);
 
 			graphics.clear();
+
+			numRightInd.scaleX = scale;
+			numRightInd.scaleY = scale;
+			numRightInd.x = 0;
+			numRightInd.y = 0;
+			numTestsInd.scaleX = scale;
+			numTestsInd.scaleY = scale;
+			numTestsInd.x = wCoeff*100;
+			numTestsInd.y = 0;
 
 			exerciseWord.scaleX = scale;
 			exerciseWord.scaleY = scale;
