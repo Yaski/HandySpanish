@@ -23,6 +23,7 @@ package {
 
 		private var numRightInd:TextField;
 		private var numTestsInd:TextField;
+		private var removeButton:KeyButton;
 		private var exerciseZone:Sprite;
 		private var exerciseWord:TextField;
 		private var prefixWord:TextField;
@@ -56,6 +57,9 @@ package {
 			numTestsInd.autoSize = TextFieldAutoSize.LEFT;
 			addChild(numTestsInd);
 
+			removeButton = new KeyButton("X", 200);
+			addChild(removeButton);
+
 			exerciseWord = new TextField();
 			exerciseWord.mouseEnabled = false;
 			exerciseWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
@@ -71,16 +75,9 @@ package {
 			loadDictionary("dictionaries/verbs.xml", "verbsVersion");
 			loadDictionary("dictionaries/other.xml", "otherVersion");
 
-			numRightInd.text = "Верных: " + words.rightAnswersCount;
-			numTestsInd.text = "Осталось: " + words.restTestsCount;
-
-			exerciseWord.text = words.russian;
-
 			prefixWord = new TextField();
 			prefixWord.mouseEnabled = false;
 			prefixWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
-//			prefixWord.text = words.prefix + " ";
-			prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
 			prefixWord.selectable = false;
 			prefixWord.autoSize = TextFieldAutoSize.LEFT;
 			addChild(prefixWord);
@@ -88,15 +85,17 @@ package {
 			resultWord = new TextField();
 			resultWord.mouseEnabled = false;
 			resultWord.defaultTextFormat = new TextFormat(null, 24, 0x0);
-			resultWord.text = "";
 			resultWord.selectable = false;
 			resultWord.autoSize = TextFieldAutoSize.LEFT;
 			addChild(resultWord);
 
 			keys = new KeysPanel();
-			keys.addEventListener(MouseEvent.CLICK, onKeyClick);
 			addChild(keys);
 
+			updateTest();
+
+			keys.addEventListener(MouseEvent.CLICK, onKeyClick);
+			removeButton.addEventListener(MouseEvent.CLICK, onRemoveTest);
 			exerciseZone.addEventListener(MouseEvent.CLICK, nextWord);
 			stage.addEventListener(Event.RESIZE, onResize);
 			onResize();
@@ -117,6 +116,11 @@ package {
 				words.importDictionary(content);
 				so.data[versionKey] = content.@version.toString();
 			}
+		}
+
+		private function onRemoveTest(event:MouseEvent):void {
+			words.removeTest();
+			updateTest();
 		}
 
 		private function onKeyClick(event:MouseEvent):void {
@@ -153,25 +157,23 @@ package {
 				} else {
 					words.failTest();
 				}
-				numRightInd.text = "Верных: " + words.rightAnswersCount;
-				numTestsInd.text = "Осталось: " + words.restTestsCount;
-				words.selectTest();
-				if (words.russian == null) {
-					exerciseWord.visible = false;
-					prefixWord.visible = false;
-					resultWord.visible = false;
-					return;
-				} else {
-					currentCorrect = -1;
-					exerciseWord.text = words.russian;
-					prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
-					resultWord.text = "";
-					onResize();
-				}
 			}
+			updateTest();
+		}
+
+		private function updateTest():void {
+			words.selectTest();
+			numRightInd.text = "Верных: " + words.rightAnswersCount;
+			numTestsInd.text = "Осталось: " + words.restTestsCount;
+			currentCorrect = -1;
+			exerciseWord.text = words.russian;
+			prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
+			resultWord.text = "";
+			onResize();
 		}
 
 		private function onResize(event:Event = null):void {
+			var s:Number;
 			var wCoeff:Number = stage.stageWidth/240;
 			var hCoeff:Number = stage.stageHeight/400;
 			var scale:Number = Math.sqrt(stage.stageWidth*stage.stageWidth + stage.stageHeight*stage.stageHeight)/Math.sqrt(240*240 + 400*400);
@@ -189,16 +191,29 @@ package {
 
 			exerciseWord.scaleX = scale;
 			exerciseWord.scaleY = scale;
+			if ((exerciseWord.width + hCoeff*10) > stage.stageWidth) {
+				s = stage.stageWidth/(exerciseWord.width + hCoeff*10);
+				exerciseWord.scaleX *= s;
+				exerciseWord.scaleY *= s;
+			}
+
 			exerciseWord.x = (stage.stageWidth - exerciseWord.width) >> 1;
 			exerciseWord.y = hCoeff*30;
 
 			prefixWord.scaleX = scale;
 			prefixWord.scaleY = scale;
-
 			resultWord.scaleX = scale;
 			resultWord.scaleY = scale;
 			var text:String = resultWord.text;
 			resultWord.text = words.spanish;
+
+			if ((prefixWord.width + resultWord.width + hCoeff*10) > stage.stageWidth) {
+				s = stage.stageWidth/(prefixWord.width + resultWord.width + hCoeff*10);
+				prefixWord.scaleX *= s;
+				prefixWord.scaleY *= s;
+				resultWord.scaleX *= s;
+				resultWord.scaleY *= s;
+			}
 
 			prefixWord.x = (stage.stageWidth - prefixWord.width - resultWord.width) >> 1;
 			prefixWord.y = hCoeff*80;
@@ -237,6 +252,11 @@ package {
 			resultWord.text = text;
 
 			var lineY:int = (stage.stageHeight >> 1) - hCoeff*50;
+
+			removeButton.scaleX = scale*0.7;
+			removeButton.scaleY = scale*0.7;
+			removeButton.x = stage.stageWidth - removeButton.width;
+			removeButton.y = lineY - removeButton.height;
 
 			exerciseZone.graphics.clear();
 			exerciseZone.graphics.beginFill(0xFFFFFF, 0);

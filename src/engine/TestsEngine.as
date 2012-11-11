@@ -14,6 +14,7 @@ package engine {
 		private var updateTestStm:SQLStatement;
 		private var rightAnswersCounterStm:SQLStatement;
 		private var restTestsCounterStm:SQLStatement;
+		private var removeTestStm:SQLStatement;
 
 		private var _rightAnswersCount:int;
 		private var _restTestsCount:int;
@@ -86,6 +87,11 @@ package engine {
 			sql = "UPDATE tests SET passed=:passed, whenTested=:whenTested WHERE id=:id";
 			updateTestStm.text = sql;
 
+			removeTestStm = new SQLStatement();
+			removeTestStm.sqlConnection = con;
+			sql = "DELETE FROM tests WHERE id=:id";
+			removeTestStm.text = sql;
+
 			rightAnswersCounterStm = new SQLStatement();
 			rightAnswersCounterStm.sqlConnection = con;
 			sql = "SELECT COUNT(*) FROM tests WHERE passed>0";
@@ -112,7 +118,6 @@ package engine {
 		}
 
 		public function importDictionary(dictionary:XML):void {
-			// regenerate tests
 			insertTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
 			var words:XMLList = dictionary.words.word;
 			for (var i:int = 0; i < words.length(); i++) {
@@ -121,6 +126,9 @@ package engine {
 					var form:XML = forms[j];
 					var rus:String = form.@russian.toString();
 					var spa:String = form.@spanish.toString();
+					if (!checkCorrectness(spa)) {
+						throw new Error("Incorrect test: " + forms[j].@name.toString() + ' "' + spa + '"');
+					}
 					var pre:String = form.@prefix == null ? "" : form.@prefix.toString();
 					hasTestStm.parameters[":russian"] = rus;
 					hasTestStm.parameters[":prefix"] = pre;
@@ -137,6 +145,33 @@ package engine {
 			}
 			countTests();
 			selectTest();
+		}
+
+		private function checkCorrectness(word:String):Boolean {
+			// can not be spaces at the end
+			// no more than one space in the word
+			// using of unknown symbols
+			const space:Number = ' '.charCodeAt(0);
+
+			if (word.length == 0) return false;
+			if (word.charCodeAt(word.length - 1) == space) return false;
+			var wasSpace:Boolean = false;
+			for (var i:int = 0; i < word.length; i++) {
+				var code:Number = word.charCodeAt(i);
+				if (code == space) {
+					if (wasSpace) return false;
+					wasSpace = true;
+				} else {
+					if (code < 97) {
+						return false;
+					}
+					if (code > 122 && code != 225 && code != 250 && code != 243 && code != 233 && code != 252 && code != 241 && code != 237) {
+						return false;
+					}
+					wasSpace = false;
+				}
+			}
+			return true;
 		}
 
 		public function selectTest():void {
@@ -183,6 +218,20 @@ package engine {
 			updateTestStm.parameters[":passed"] = 0;
 			updateTestStm.parameters[":whenTested"] = int((new Date()).time/1000);
 			updateTestStm.execute();
+		}
+
+		public function removeTest():void {
+			if (_currentTest == null) return;
+
+			if (_currentTest.passed > 0) {
+				_rightAnswersCount--;
+			} else {
+				_restTestsCount--;
+			}
+
+			removeTestStm.parameters[":id"] = _currentTest.id;
+			removeTestStm.execute();
+			_currentTest = null;
 		}
 
 		public function get rightAnswersCount():int {

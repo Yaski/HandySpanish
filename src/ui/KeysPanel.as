@@ -27,6 +27,10 @@ package ui {
 		private function init(w:int, h:int):void {
 			while (numChildren) {removeChildAt(0)};
 
+//			for (var i:int = 0; i < ALPHABET.length; i++) {
+//				trace(ALPHABET[i], ":", ALPHABET[i].charCodeAt(0));
+//			}
+
 			// 240x245
 			var hCoeff:Number = h/245;
 			var wCoeff:Number = w/240;

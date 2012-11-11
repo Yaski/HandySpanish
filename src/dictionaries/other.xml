@@ -1,4 +1,4 @@
-<dictionary version="2012.11.11/5">
+<dictionary version="2012.11.12/0">
     <words>
         <!-- местоимения (мой, твой), сказать время, present progressive, родственники -->
         <word name="двадцать">
@@ -88,7 +88,7 @@
         </word>
         <word name="cual">
             <form russian="которые" spanish="los cuales" />
-            <form russian="которую" spanish="a la cual" />
+            <form russian="в которую" spanish="a la cual" />
             <form russian="который" spanish="lo cual" />
         </word>
         <word name="después">
@@ -99,7 +99,7 @@
         <word name="antes">
             <form russian="раньше" spanish="antes" />
             <form russian="немного раньше" spanish="poco antes" />
-            <form russian="до четверга" spanish="antes del jueves" />
+            <form russian="раньше четверга" spanish="antes del jueves" />
         </word>
         <word name="ayer">
             <form russian="вчера" spanish="ayer" />
@@ -121,7 +121,7 @@
             <form russian="немного больше" spanish="un poco más" />
             <form russian="ещё больше; тем более" spanish="todavía más" />
             <form russian="больше двадцати" spanish="más de veinte" />
-            <form russian="dame más" spanish="дай мне ещё" />
+            <form russian="дай мне ещё" spanish="dame más" />
         </word>
 
         <word name="dentro">
