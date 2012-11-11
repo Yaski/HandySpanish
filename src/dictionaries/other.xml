@@ -1,5 +1,6 @@
-<dictionary version="2012.11.10/12">
+<dictionary version="2012.11.11/5">
     <words>
+        <!-- местоимения (мой, твой), сказать время, present progressive, родственники -->
         <word name="двадцать">
             <form russian="двадцать" spanish="veinte" />
         </word>
@@ -54,5 +55,102 @@
         <word name="сто">
             <form russian="сто" spanish="cien" />
         </word>
+        <word name="двести">
+            <form russian="двести" spanish="doscientos" />
+        </word>
+        <word name="триста">
+            <form russian="триста" spanish="trescientos" />
+        </word>
+        <word name="четыреста">
+            <form russian="четыреста" spanish="cuatrocientos" />
+        </word>
+        <word name="пятьсот">
+            <form russian="пятьсот" spanish="quinientos" />
+        </word>
+        <word name="шестьсот">
+            <form russian="шестьсот" spanish="seiscientos" />
+        </word>
+        <word name="семьсот">
+            <form russian="семьсот" spanish="setecientos" />
+        </word>
+        <word name="восемьсот">
+            <form russian="восемьсот" spanish="ochocientos" />
+        </word>
+        <word name="девятьсот">
+            <form russian="девятьсот" spanish="novecientos" />
+        </word>
+        <word name="тысяча">
+            <form russian="тысяча" spanish="mil" />
+        </word>
+
+        <word name="cuando">
+            <form russian="когда" spanish="cuando" />
+        </word>
+        <word name="cual">
+            <form russian="которые" spanish="los cuales" />
+            <form russian="которую" spanish="a la cual" />
+            <form russian="который" spanish="lo cual" />
+        </word>
+        <word name="después">
+            <form russian="позже, потом" spanish="después" />
+            <form russian="немного позже" spanish="poco después" />
+            <form russian="после моего ухода" spanish="después de mi salida" />
+        </word>
+        <word name="antes">
+            <form russian="раньше" spanish="antes" />
+            <form russian="немного раньше" spanish="poco antes" />
+            <form russian="до четверга" spanish="antes del jueves" />
+        </word>
+        <word name="ayer">
+            <form russian="вчера" spanish="ayer" />
+            <form russian="вчерашний день" spanish="día de ayer" />
+        </word>
+        <word name="mañana">
+            <form russian="завтра" spanish="mañana" />
+            <form russian="послезавтра" spanish="pasado mañana" />
+        </word>
+        <word name="menos">
+            <form russian="минус" spanish="el menos" />
+            <form russian="гораздо меньше" spanish="mucho menos" />
+            <form russian="подешевле" spanish="menos caro" />
+        </word>
+        <word name="más">
+            <form russian="плюс" spanish="el más" />
+            <form russian="больше" spanish="más" />
+            <form russian="гораздо больше" spanish="mucho más" />
+            <form russian="немного больше" spanish="un poco más" />
+            <form russian="ещё больше; тем более" spanish="todavía más" />
+            <form russian="больше двадцати" spanish="más de veinte" />
+            <form russian="dame más" spanish="дай мне ещё" />
+        </word>
+
+        <word name="dentro">
+            <form russian="внутри дома" spanish="dentro de la casa" />
+        </word>
+        <word name="afuera">
+            <form russian="снаружи дома" spanish="fuera de la casa" />
+        </word>
+        <word name="sobre">
+            <form russian="на столе" spanish="sobre la mesa" />
+            <form russian="над городом" spanish="sobre la ciudad" />
+        </word>
+        <word name="debajo">
+            <form russian="под столом" spanish="debajo de la mesa" />
+        </word>
+        <word name="delante">
+            <form russian="перед домом" spanish="delante de la casa" />
+        </word>
+        <word name="detrás">
+            <form russian="за домом" spanish="detrás de la casa" />
+        </word>
+        <word name="izquierda">
+            <form russian="налево" spanish="a la izquierda" />
+        </word>
+        <word name="derecha">
+            <form russian="направо" spanish="a la derecha" />
+            <form russian="справа налево" spanish="de derecha a izquierda" />
+            <form russian="справа от меня" spanish="a mi derecha" />
+        </word>
+
     </words>
 </dictionary>

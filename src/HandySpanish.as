@@ -67,6 +67,7 @@ package {
 			words = new TestsEngine();
 			words.init();
 			loadDictionary("dictionaries/nouns.xml", "nounsVersion");
+			loadDictionary("dictionaries/adjectives.xml", "adjectVersion");
 			loadDictionary("dictionaries/verbs.xml", "verbsVersion");
 			loadDictionary("dictionaries/other.xml", "otherVersion");
 

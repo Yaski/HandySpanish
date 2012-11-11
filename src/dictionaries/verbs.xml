@@ -1,4 +1,4 @@
-<dictionary version="2012.11.10/12">
+<dictionary version="2012.11.11/5">
     <words>
         <word name="tener">
             <form russian="иметь" spanish="tener" />
@@ -13,5 +13,81 @@
             <form russian="иметь" prefix="ellas" spanish="tienen" />
             <form russian="иметь" prefix="ustedes" spanish="tienen" />
         </word>
+        <word name="ser">
+            <form russian="быть" spanish="ser" />
+            <form russian="быть" prefix="Yo" spanish="soy" />
+            <form russian="быть" prefix="tú" spanish="eres" />
+            <form russian="быть" prefix="él" spanish="es" />
+            <form russian="быть" prefix="ella" spanish="es" />
+            <form russian="быть" prefix="usted" spanish="es" />
+            <form russian="быть" prefix="nosotros" spanish="somos" />
+            <form russian="быть" prefix="vosotros" spanish="sois" />
+            <form russian="быть" prefix="ellos" spanish="son" />
+            <form russian="быть" prefix="ellas" spanish="son" />
+            <form russian="быть" prefix="ustedes" spanish="son" />
+        </word>
+        <word name="estar">
+            <form russian="быть в состоянии" spanish="estar" />
+            <form russian="быть в состоянии" prefix="Yo" spanish="estoy" />
+            <form russian="быть в состоянии" prefix="tú" spanish="estás" />
+            <form russian="быть в состоянии" prefix="él" spanish="está" />
+            <form russian="быть в состоянии" prefix="ella" spanish="está" />
+            <form russian="быть в состоянии" prefix="usted" spanish="está" />
+            <form russian="быть в состоянии" prefix="nosotros" spanish="estamos" />
+            <form russian="быть в состоянии" prefix="vosotros" spanish="estáis" />
+            <form russian="быть в состоянии" prefix="ellos" spanish="están" />
+            <form russian="быть в состоянии" prefix="ellas" spanish="están" />
+            <form russian="быть в состоянии" prefix="ustedes" spanish="están" />
+        </word>
+        <word name="gustar">
+            <form russian="нравится" spanish="gustar" />
+            <form russian="нравится это" prefix="a mi" spanish="me gusta" />
+            <form russian="нравится это" prefix="a ti" spanish="te gusta" />
+            <form russian="нравится это" prefix="a él" spanish="le gusta" />
+            <form russian="нравится это" prefix="a ella" spanish="le gusta" />
+            <form russian="нравится это" prefix="a usted" spanish="le gusta" />
+            <form russian="нравится это" prefix="a nosotros" spanish="nos gusta" />
+            <form russian="нравится это" prefix="a vosotros" spanish="os gusta" />
+            <form russian="нравится это" prefix="a ellos" spanish="les gusta" />
+            <form russian="нравится это" prefix="a ellas" spanish="les gusta" />
+            <form russian="нравится это" prefix="a ustedes" spanish="les gusta" />
+            <form russian="нравятся эти" prefix="a mi" spanish="me gustan" />
+            <form russian="нравятся эти" prefix="a ti" spanish="te gustan" />
+            <form russian="нравятся эти" prefix="a él" spanish="le gustan" />
+            <form russian="нравятся эти" prefix="a ella" spanish="le gustan" />
+            <form russian="нравятся эти" prefix="a usted" spanish="le gustan" />
+            <form russian="нравятся эти" prefix="a nosotros" spanish="nos gustan" />
+            <form russian="нравятся эти" prefix="a vosotros" spanish="os gustan" />
+            <form russian="нравятся эти" prefix="a ellos" spanish="les gustan" />
+            <form russian="нравятся эти" prefix="a ellas" spanish="les gustan" />
+            <form russian="нравятся эти" prefix="a ustedes" spanish="les gustan" />
+        </word>
+        <word name="poder">
+            <form russian="мочь сделать что-то" spanish="poder" />
+            <form russian="мочь сделать что-то" prefix="Yo" spanish="puedo" />
+            <form russian="мочь сделать что-то" prefix="tú" spanish="puedes" />
+            <form russian="мочь сделать что-то" prefix="él" spanish="puede" />
+            <form russian="мочь сделать что-то" prefix="ella" spanish="puede" />
+            <form russian="мочь сделать что-то" prefix="usted" spanish="puede" />
+            <form russian="мочь сделать что-то" prefix="nosotros" spanish="podemos" />
+            <form russian="мочь сделать что-то" prefix="vosotros" spanish="podéis" />
+            <form russian="мочь сделать что-то" prefix="ellos" spanish="pueden" />
+            <form russian="мочь сделать что-то" prefix="ellas" spanish="pueden" />
+            <form russian="мочь сделать что-то" prefix="ustedes" spanish="pueden" />
+        </word>
+        <word name="querer">
+            <form russian="хотеть" spanish="querer" />
+            <form russian="хотеть" prefix="Yo" spanish="quiero" />
+            <form russian="хотеть" prefix="tú" spanish="quieres" />
+            <form russian="хотеть" prefix="él" spanish="quiere" />
+            <form russian="хотеть" prefix="ella" spanish="quiere" />
+            <form russian="хотеть" prefix="usted" spanish="quiere" />
+            <form russian="хотеть" prefix="nosotros" spanish="queremos" />
+            <form russian="хотеть" prefix="vosotros" spanish="queréis" />
+            <form russian="хотеть" prefix="ellos" spanish="quieren" />
+            <form russian="хотеть" prefix="ellas" spanish="quieren" />
+            <form russian="хотеть" prefix="ustedes" spanish="quieren" />
+        </word>
+
     </words>
 </dictionary>

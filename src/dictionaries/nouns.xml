@@ -1,4 +1,4 @@
-<dictionary version="2012.11.10/12">
+<dictionary version="2012.11.11/5">
     <words>
         <word name="gato">
             <form spanish="el gato" russian="кот" />
@@ -22,16 +22,6 @@
         <word name="silla">
             <form spanish="la silla" russian="стул" />
         </word>
-        <word name="azul">
-            <form spanish="el azul" russian="синий цвет" />
-        </word>
-        <word name="rojo">
-            <form spanish="el rojo" russian="красный цвет" />
-        </word>
-        <word name="verde">
-            <form spanish="el verde" russian="зелёный цвет" />
-        </word>
-
         <word name="enero">
             <form spanish="el enero" russian="январь" />
         </word>
@@ -117,5 +107,14 @@
         <word name="hija">
             <form spanish="la hija" russian="дочь" />
         </word>
+        <word name="viejo">
+            <form russian="старик" spanish="el viejo" />
+            <form russian="старуха" spanish="la vieja" />
+        </word>
+
+        <word name="mañana">
+            <form russian="утро" spanish="la mañana" />
+        </word>
+
     </words>
 </dictionary>

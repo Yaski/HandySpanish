@@ -1,0 +1,81 @@
+<dictionary version="2012.11.11/5">
+    <words>
+        <word name="alto">
+            <form russian="высокий" prefix="Juan es" spanish="alto" />
+            <form russian="высокий" prefix="Maria es" spanish="alta" />
+        </word>
+        <word name="gordo">
+            <form russian="толстый" prefix="Juan es" spanish="gordo" />
+            <form russian="толстый" prefix="Maria es" spanish="gorda" />
+        </word>
+        <word name="pequeño">
+            <form russian="маленький" prefix="el coche es" spanish="pequeño" />
+            <form russian="маленький" prefix="la casa es" spanish="pequeña" />
+        </word>
+        <word name="guapo">
+            <form russian="красивый" prefix="Juan es" spanish="guapo" />
+            <form russian="красивый" prefix="Maria es" spanish="guapa" />
+        </word>
+        <word name="viejo">
+            <form russian="старый" prefix="él es" spanish="viejo" />
+            <form russian="старый" prefix="ella es" spanish="vieja" />
+        </word>
+        <word name="delgado">
+            <form russian="худой" prefix="él es" spanish="delgado" />
+            <form russian="худой" prefix="ella es" spanish="delgada" />
+        </word>
+
+        <word name="azul">
+            <form russian="синий цвет" spanish="el azul" />
+            <form russian="синий" prefix="él es" spanish="azul" />
+            <form russian="синий" prefix="ella es" spanish="azul" />
+            <form russian="синий" prefix="ellos son" spanish="azules" />
+        </word>
+        <word name="rojo">
+            <form russian="красный цвет" spanish="el rojo" />
+            <form russian="красный" prefix="él es" spanish="rojo" />
+            <form russian="красный" prefix="ella es" spanish="roja" />
+        </word>
+        <word name="amarillo">
+            <form russian="жёлтый" prefix="él es" spanish="amarillo" />
+            <form russian="жёлтый" prefix="ella es" spanish="amarilla" />
+        </word>
+        <word name="verde">
+            <form russian="зелёный цвет" spanish="el verde" />
+            <form russian="зелёный" prefix="él es" spanish="verde" />
+            <form russian="зелёный" prefix="ella es" spanish="verde" />
+        </word>
+        <word name="blanco">
+            <form russian="белый" prefix="él es" spanish="blanco" />
+            <form russian="белый" prefix="ella es" spanish="blanca" />
+        </word>
+        <word name="negro">
+            <form russian="чёрный" prefix="él es" spanish="negro" />
+            <form russian="чёрный" prefix="ella es" spanish="negra" />
+        </word>
+        <word name="rosa">
+            <form russian="розовый" prefix="él es" spanish="rosa" />
+            <form russian="розовый" prefix="ella es" spanish="rosa" />
+        </word>
+        <word name="naranja">
+            <form russian="оранжевый" prefix="él es" spanish="naranja" />
+            <form russian="оранжевый" prefix="ella es" spanish="naranja" />
+            <form russian="оранжевый" prefix="las flores son" spanish="naranjas" />
+        </word>
+        <word name="morado">
+            <form russian="фиолетовый" prefix="él es" spanish="morado" />
+            <form russian="фиолетовый" prefix="ella es" spanish="morada" />
+            <form russian="фиолетовый" prefix="las flores son" spanish="moradas" />
+        </word>
+        <word name="marrón">
+            <form russian="коричневый" prefix="él es" spanish="marrón" />
+            <form russian="коричневый" prefix="ella es" spanish="marrón" />
+        </word>
+        <word name="transparente">
+            <form russian="прозрачный" prefix="él es" spanish="transparente" />
+            <form russian="прозрачный" prefix="ella es" spanish="transparente" />
+            <form russian="прозрачный" prefix="ellos son" spanish="transparentes" />
+        </word>
+
+    </words>
+</dictionary>
