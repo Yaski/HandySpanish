@@ -31,7 +31,7 @@ package {
 		private var keys:KeysPanel;
 
 		private var words:TestsEngine;
-		private var currentCorrect:int = -1;
+		private var numErratas:int = -1;
 
 		public function HandySpanish() {
 			stage.align = StageAlign.TOP_LEFT;
@@ -135,15 +135,13 @@ package {
 
 					if (words.spanish.charAt(index) == button.text) {
 						resultWord.appendText(button.text);
-						if (currentCorrect == -1) {
-							currentCorrect = 1;
-							onResize();
+						if (numErratas == -1) {
+							numErratas = 0;
 						}
+						onResize();
 					} else {
-						if (currentCorrect != 0) {
-							currentCorrect = 0;
-							onResize();
-						}
+						numErratas = numErratas < 1 ? 1 : numErratas + 1;
+						onResize();
 					}
 				}
 			}
@@ -152,20 +150,20 @@ package {
 		private function nextWord(e:Event):void {
 			if (resultWord.text.length >= words.spanish.length) {
 				// full world
-				if (currentCorrect == 1) {
+				if (numErratas <= 1) {
 					words.passTest();
 				} else {
 					words.failTest();
 				}
+				updateTest();
 			}
-			updateTest();
 		}
 
 		private function updateTest():void {
 			words.selectTest();
 			numRightInd.text = "Верных: " + words.rightAnswersCount;
 			numTestsInd.text = "Осталось: " + words.restTestsCount;
-			currentCorrect = -1;
+			numErratas = -1;
 			exerciseWord.text = words.russian;
 			prefixWord.text = words.prefix != "" ? words.prefix + " " : "";
 			resultWord.text = "";
@@ -221,12 +219,14 @@ package {
 			resultWord.y = prefixWord.y;
 
 			var y:Number = resultWord.y + resultWord.height + hCoeff*5;
-			if (currentCorrect == -1) {
+			if (numErratas == -1) {
 				graphics.beginFill(0x0);
-			} else if (currentCorrect == 0) {
-				graphics.beginFill(0xFF0000);
-			} else {
+			} else if (numErratas == 0) {
 				graphics.beginFill(0xFF00);
+			} else if (numErratas == 1) {
+				graphics.beginFill(0xFFFF00);
+			} else {
+				graphics.beginFill(0xFF0000);
 			}
 			var lineStartX:Number = 0;
 			var wasWhitespace:Boolean = true;

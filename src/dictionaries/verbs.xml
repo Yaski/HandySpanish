@@ -1,4 +1,4 @@
-<dictionary version="2012.11.11/5">
+<dictionary version="2012.11.12/11">
     <words>
         <word name="tener">
             <form russian="иметь" spanish="tener" />
@@ -80,6 +80,80 @@
             <form russian="хотеть" prefix="vosotros" spanish="queréis" />
             <form russian="хотеть" prefix="ellos" spanish="quieren" />
             <form russian="хотеть" prefix="ustedes" spanish="quieren" />
+        </word>
+
+        <word name="tomar">
+            <form russian="брать, получать" spanish="tomar" />
+			<form russian="брать, получать" prefix="Yo" spanish="tomo" />
+            <form russian="брать, получать" prefix="tú" spanish="tomas" />
+            <form russian="брать, получать" prefix="él" spanish="toma" />
+            <form russian="брать, получать" prefix="ella" spanish="toma" />
+            <form russian="брать, получать" prefix="usted" spanish="toma" />
+            <form russian="брать, получать" prefix="nosotros" spanish="tomamos" />
+            <form russian="брать, получать" prefix="vosotros" spanish="tomáis" />
+            <form russian="брать, получать" prefix="ellos" spanish="toman" />
+            <form russian="брать, получать" prefix="ustedes" spanish="toman" /> 
+
+            <form russian="бери, возьми" prefix="tú" spanish="toma" />
+            <form russian="бери, возьми" prefix="usted" spanish="tome" />
+            <form russian="бери, возьми" prefix="vosotros" spanish="tomad" />
+            <form russian="бери, возьми" prefix="ustedes" spanish="tomen" /> 
+
+            <form russian="не бери" prefix="tú" spanish="no tomes" />
+            <form russian="не бери" prefix="usted" spanish="no tome" />
+            <form russian="не бери" prefix="vosotros" spanish="no toméis" />
+            <form russian="не бери" prefix="ustedes" spanish="no tomen" /> 
+
+            <form russian="брать деньги взаймы" spanish="tomar dinero prestado" /> 
+            <form russian="полететь самолётом" spanish="tomar el avión" /> 
+            <form russian="взять такси" spanish="tomar un taxi" /> 
+            <form russian="сесть на место" spanish="tomar asiento" /> 
+        </word>
+        <word name="comer">
+            <form russian="есть, ужинать, обедать" spanish="comer" />
+			<form russian="есть, ужинать, обедать" prefix="Yo" spanish="como" />
+            <form russian="есть, ужинать, обедать" prefix="tú" spanish="comes" />
+            <form russian="есть, ужинать, обедать" prefix="él" spanish="come" />
+            <form russian="есть, ужинать, обедать" prefix="ella" spanish="come" />
+            <form russian="есть, ужинать, обедать" prefix="usted" spanish="come" />
+            <form russian="есть, ужинать, обедать" prefix="nosotros" spanish="comemos" />
+            <form russian="есть, ужинать, обедать" prefix="vosotros" spanish="coméis" />
+            <form russian="есть, ужинать, обедать" prefix="ellos" spanish="comen" />
+            <form russian="есть, ужинать, обедать" prefix="ustedes" spanish="comen" /> 
+
+            <form russian="ешь" prefix="tú" spanish="come" />
+            <form russian="ешь" prefix="usted" spanish="coma" />
+            <form russian="ешь" prefix="vosotros" spanish="comed" />
+            <form russian="ешь" prefix="ustedes" spanish="coman" /> 
+
+            <form russian="не ешь" prefix="tú" spanish="no comas" />
+            <form russian="не ешь" prefix="usted" spanish="no coma" />
+            <form russian="не ешь" prefix="vosotros" spanish="no comáis" />
+            <form russian="не ешь" prefix="ustedes" spanish="no coman" /> 
+        </word>
+        <word name="subir">
+            <form russian="подниматься, перемещаться вверх" spanish="subir" />
+			<form russian="подниматься, перемещаться вверх" prefix="Yo" spanish="subo" />
+            <form russian="подниматься, перемещаться вверх" prefix="tú" spanish="subes" />
+            <form russian="подниматься, перемещаться вверх" prefix="él" spanish="sube" />
+            <form russian="подниматься, перемещаться вверх" prefix="ella" spanish="sube" />
+            <form russian="подниматься, перемещаться вверх" prefix="usted" spanish="sube" />
+            <form russian="подниматься, перемещаться вверх" prefix="nosotros" spanish="subimos" />
+            <form russian="подниматься, перемещаться вверх" prefix="vosotros" spanish="subís" />
+            <form russian="подниматься, перемещаться вверх" prefix="ellos" spanish="suben" />
+            <form russian="подниматься, перемещаться вверх" prefix="ustedes" spanish="suben" /> 
+			
+            <form russian="поднимайся" prefix="tú" spanish="sube" />
+            <form russian="поднимайся" prefix="usted" spanish="suba" />
+            <form russian="поднимайся" prefix="vosotros" spanish="subid" />
+            <form russian="поднимайся" prefix="ustedes" spanish="suban" /> 
+
+            <form russian="не поднимайся" prefix="tú" spanish="no subas" />
+            <form russian="не поднимайся" prefix="usted" spanish="no suba" />
+            <form russian="не поднимайся" prefix="vosotros" spanish="no subáis" />
+            <form russian="не поднимайся" prefix="ustedes" spanish="no suban" /> 
+			
+            <form russian="вода в реке прибывает (поднимается)" spanish="el río sube" /> 
         </word>
 
     </words>

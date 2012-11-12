@@ -1,6 +1,6 @@
-<dictionary version="2012.11.12/0">
+<dictionary version="2012.11.12/11">
     <words>
-        <!-- местоимения (мой, твой), сказать время, present progressive, родственники -->
+        <!-- местоимения (мой, твой), сказать время, present progressive, родственники, para-por -->
         <word name="двадцать">
             <form russian="двадцать" spanish="veinte" />
         </word>
@@ -122,6 +122,8 @@
             <form russian="ещё больше; тем более" spanish="todavía más" />
             <form russian="больше двадцати" spanish="más de veinte" />
             <form russian="дай мне ещё" spanish="dame más" />
+            <form russian="ещё раз" spanish="una vez más" />
+            <form russian="сказать ещё что-нибудь" spanish="decir algo más" />
         </word>
 
         <word name="dentro">
@@ -150,6 +152,70 @@
             <form russian="направо" spanish="a la derecha" />
             <form russian="справа налево" spanish="de derecha a izquierda" />
             <form russian="справа от меня" spanish="a mi derecha" />
+        </word>
+		
+		<word name="alguien">
+            <form russian="кто-то, некто" spanish="alguien" />
+        </word>
+		<word name="algo">
+            <form russian="что-то, что-нибудь" spanish="algo" />
+            <form russian="скажи мне что-нибудь" spanish="dime algo" />
+            <form russian="у меня есть немного денег" spanish="tengo algo de dinero" />
+            <form russian="что-то из фруктов" spanish="algo de fruta" />
+            <form russian="недаром, неспроста" spanish="por algo" />
+        </word>
+		<word name="alguno">
+            <form russian="какой-нибудь, какой-либо" prefix="él es" spanish="alguno" />
+            <form russian="какой-нибудь, какой-либо" prefix="ella es" spanish="alguna" />
+            <form russian="какой-нибудь (усеч.)" spanish="algún" />
+            <form russian="дай мне что-нибудь" spanish="dame alguna cosa" />
+            <form russian="какая-нибудь книга" spanish="algún libro" />
+        </word>
+		<word name="nadie">
+            <form russian="никто" spanish="nadie" />
+            <form russian="нет здесь никого" spanish="no hay nadie" />
+        </word>
+		<word name="ninguno">
+            <form russian="ни один" prefix="él es" spanish="ninguno" />
+            <form russian="ни один" prefix="ella es" spanish="ninguna" />
+            <form russian="никто из них" spanish="ninguno de ellos" />
+            <form russian="ни один (усеч.)" spanish="ningún" />
+            <form russian="нет здесь ни одного свободного места" spanish="no hay ningún asiento libre" />
+        </word>
+		<word name="nada">
+            <form russian="ничто, ничего" spanish="nada" />
+            <form russian="прежде всего" spanish="antes de nada" />
+            <form russian="зря, напрасно" spanish="para nada" />
+            <form russian="ничего особенного" spanish="nada de particular" />
+            <form russian="ничего из фруктов" spanish="nada de fruta" />
+            <form russian="ничто его не интересует" spanish="no le interesa nada" />
+        </word>
+		<word name="nunca">
+            <form russian="никогда" spanish="nunca" />
+            <form russian="никогда больше" spanish="nunca más" />
+            <form russian="лучше поздно, чем никогда" spanish="más vale tarde que nunca" />
+            <form russian="никогда не имеет времени" spanish="no tiene nunca tiempo" />
+        </word>
+		<word name="tarde">
+            <form russian="время после полудня" spanish="la tarde" />
+            <form russian="поздно" spanish="tarde" />
+            <form russian="рано или поздно" spanish="tarde o temprano" />
+        </word>
+		<word name="siempre">
+            <form russian="всегда" spanish="siempre" />
+        </word>
+		<word name="todavía">
+            <form russian="ещё, всё ещё, до сих пор" spanish="todavía" />
+            <form russian="всё ещё (до сих пор) болен" spanish="todavía está enfermo" />
+            <form russian="дождь ещё идёт" spanish="todavía llueve" />
+        </word>
+		<word name="ya">
+            <form russian="уж, уже" spanish="ya" />
+            <form russian="уже (сейчас) иду" spanish="ya voy" />
+            <form russian="уже 6 часов" spanish="ya son las seis" />
+            <form russian="он уже взрослый" prefix="él" spanish="ya es mayo" />
+            <form russian="уже нет среди нас (живых)" spanish="ya no está entre nosotros" />
+            <form russian="уже нет среди живых" spanish="ya no vive" />
         </word>
 
     </words>
