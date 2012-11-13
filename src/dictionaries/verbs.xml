@@ -1,4 +1,4 @@
-<dictionary version="2012.11.12/11">
+<dictionary version="2012.11.13/11">
     <words>
         <word name="tener">
             <form russian="иметь" spanish="tener" />
@@ -155,6 +155,277 @@
 			
             <form russian="вода в реке прибывает (поднимается)" spanish="el río sube" /> 
         </word>
+		<word name="escribir">
+			<form russian="писать, сочинять" spanish="escribir" />
+			<form russian="писать, сочинять" prefix="yo" spanish="escribo" />
+			<form russian="писать, сочинять" prefix="tú" spanish="escribes" />
+			<form russian="писать, сочинять" prefix="él" spanish="escribe" />
+			<form russian="писать, сочинять" prefix="ella" spanish="escribe" />
+			<form russian="писать, сочинять" prefix="usted" spanish="escribe" />
+			<form russian="писать, сочинять" prefix="nosotros" spanish="escribimos" />
+			<form russian="писать, сочинять" prefix="vosotros" spanish="escribís" />
+			<form russian="писать, сочинять" prefix="ellos" spanish="escriben" />
+			<form russian="писать, сочинять" prefix="ustedes" spanish="escriben" />
 
-    </words>
+			<form russian="пиши" prefix="tú" spanish="escribe" />
+			<form russian="пиши" prefix="usted" spanish="escriba" />
+			<form russian="пиши" prefix="vosotros" spanish="escribid" />
+			<form russian="пиши" prefix="ustedes" spanish="escriban" />
+
+			<form russian="не пиши" prefix="tú" spanish="no escribas" />
+			<form russian="не пиши" prefix="usted" spanish="no escriba" />
+			<form russian="не пиши" prefix="vosotros" spanish="no escribáis" />
+			<form russian="не пиши" prefix="ustedes" spanish="no escriban" />
+
+			<form russian="писать под диктовк" spanish="escribir al dictado" />
+			<form russian="писать быстро" spanish="escribir tirado" />
+		</word>
+		<word name="abrir">
+			<form russian="открывать, распечатывать" spanish="abrir" />
+			<form russian="открывать, распечатывать" prefix="yo" spanish="abro" />
+			<form russian="открывать, распечатывать" prefix="tú" spanish="abres" />
+			<form russian="открывать, распечатывать" prefix="él" spanish="abre" />
+			<form russian="открывать, распечатывать" prefix="ella" spanish="abre" />
+			<form russian="открывать, распечатывать" prefix="usted" spanish="abre" />
+			<form russian="открывать, распечатывать" prefix="nosotros" spanish="abrimos" />
+			<form russian="открывать, распечатывать" prefix="vosotros" spanish="abrís" />
+			<form russian="открывать, распечатывать" prefix="ellos" spanish="abren" />
+			<form russian="открывать, распечатывать" prefix="ustedes" spanish="abren" />
+
+			<form russian="открой" prefix="tú" spanish="abre" />
+			<form russian="открой" prefix="usted" spanish="abra" />
+			<form russian="открой" prefix="vosotros" spanish="abrid" />
+			<form russian="открой" prefix="ustedes" spanish="abran" />
+
+			<form russian="не открывай" prefix="tú" spanish="no abras" />
+			<form russian="не открывай" prefix="usted" spanish="no abra" />
+			<form russian="не открывай" prefix="vosotros" spanish="no abráis" />
+			<form russian="не открывай" prefix="ustedes" spanish="no abran" />
+
+			<form russian="отпирать ключом" spanish="escribir con llave" />
+			<form russian="включать воду" spanish="abrir el agua" />
+			<form russian="раскрыть зонтик" spanish="abrir el paraguas" />
+			<form russian="начать переговоры" spanish="abrir las negociaciones" />
+			<form russian="в один миг, в одно мгновение" spanish="en un abrir y cerrar de ojos" />
+		</word>
+		<word name="alquilar">
+			<form russian="арендовать" spanish="alquilar" />
+		</word>
+		<word name="continuar">
+			<form russian="продолжать" spanish="continuar" />
+			<form russian="продолжать" prefix="Yo" spanish="continuo" />
+			<form russian="продолжать" prefix="tú" spanish="continuas" />
+			<form russian="продолжать" prefix="él" spanish="continua" />
+			<form russian="продолжать" prefix="ella" spanish="continua" />
+			<form russian="продолжать" prefix="usted" spanish="continua" />
+			<form russian="продолжать" prefix="nosotros" spanish="continuamos" />
+			<form russian="продолжать" prefix="vosotros" spanish="continuáis" />
+			<form russian="продолжать" prefix="ellos" spanish="continuan" />
+			<form russian="продолжать" prefix="ustedes" spanish="continuan" />
+
+			<form russian="продолжай" prefix="tú" spanish="continua" />
+			<form russian="продолжай" prefix="usted" spanish="continue" />
+			<form russian="продолжай" prefix="vosotros" spanish="continuad" />
+			<form russian="продолжай" prefix="ustedes" spanish="continuen" />
+
+			<form russian="не продолжай" prefix="tú" spanish="no continues" />
+			<form russian="не продолжай" prefix="usted" spanish="no continue" />
+			<form russian="не продолжай" prefix="vosotros" spanish="no continuéis" />
+			<form russian="не продолжай" prefix="ustedes" spanish="no continuen" />
+		</word>
+		<word name="trabajar">
+			<form russian="работать, обрабатывать" spanish="trabajar" />
+			<form russian="работать, обрабатывать" prefix="Yo" spanish="trabajo" />
+			<form russian="работать, обрабатывать" prefix="tú" spanish="trabajas" />
+			<form russian="работать, обрабатывать" prefix="él" spanish="trabaja" />
+			<form russian="работать, обрабатывать" prefix="ella" spanish="trabaja" />
+			<form russian="работать, обрабатывать" prefix="usted" spanish="trabaja" />
+			<form russian="работать, обрабатывать" prefix="nosotros" spanish="trabajamos" />
+			<form russian="работать, обрабатывать" prefix="vosotros" spanish="trabajáis" />
+			<form russian="работать, обрабатывать" prefix="ellos" spanish="trabajan" />
+			<form russian="работать, обрабатывать" prefix="ustedes" spanish="trabajan" />
+
+			<form russian="работай" prefix="tú" spanish="trabaja" />
+			<form russian="работай" prefix="usted" spanish="trabaje" />
+			<form russian="работай" prefix="vosotros" spanish="trabajad" />
+			<form russian="работай" prefix="ustedes" spanish="trabajen" />
+
+			<form russian="не работай" prefix="tú" spanish="no trabajes" />
+			<form russian="не работай" prefix="usted" spanish="no trabaje" />
+			<form russian="не работай" prefix="vosotros" spanish="no trabajéis" />
+			<form russian="не работай" prefix="ustedes" spanish="no trabajen" />
+		</word>
+		<word name="coger">
+			<form russian="принимать, брать, хватать" spanish="coger" />
+			<form russian="принимать, брать, хватать" prefix="Yo" spanish="cogo" />
+			<form russian="принимать, брать, хватать" prefix="tú" spanish="coges" />
+			<form russian="принимать, брать, хватать" prefix="él" spanish="coge" />
+			<form russian="принимать, брать, хватать" prefix="ella" spanish="coge" />
+			<form russian="принимать, брать, хватать" prefix="usted" spanish="coge" />
+			<form russian="принимать, брать, хватать" prefix="nosotros" spanish="cogemos" />
+			<form russian="принимать, брать, хватать" prefix="vosotros" spanish="cogéis" />
+			<form russian="принимать, брать, хватать" prefix="ellos" spanish="cogen" />
+			<form russian="принимать, брать, хватать" prefix="ustedes" spanish="cogen" />
+
+			<form russian="прими" prefix="tú" spanish="coge" />
+			<form russian="прими" prefix="usted" spanish="coga" />
+			<form russian="прими" prefix="vosotros" spanish="coged" />
+			<form russian="прими" prefix="ustedes" spanish="cogan" />
+
+			<form russian="не принимай" prefix="tú" spanish="no cogas" />
+			<form russian="не принимай" prefix="usted" spanish="no coga" />
+			<form russian="не принимай" prefix="vosotros" spanish="no cogáis" />
+			<form russian="не принимай" prefix="ustedes" spanish="no cogan" />
+
+			<form russian="взять яблоко" spanish="coger una manzana" />
+			<form russian="простудиться" spanish="coger frío" />
+			<form russian="испугаться" spanish="coger miedo" />
+			<form russian="почувствовать отвращение, возненавидеть" spanish="coger aversión" />
+			<form russian="снять квартиру" spanish="coger un piso" />
+		</word>
+		<word name="regalar">
+			<form russian="дарить, преподносить" spanish="regalar" />
+			<form russian="дарить, преподносить" prefix="Yo" spanish="regalo" />
+			<form russian="дарить, преподносить" prefix="tú" spanish="regalas" />
+			<form russian="дарить, преподносить" prefix="él" spanish="regala" />
+			<form russian="дарить, преподносить" prefix="ella" spanish="regala" />
+			<form russian="дарить, преподносить" prefix="usted" spanish="regala" />
+			<form russian="дарить, преподносить" prefix="nosotros" spanish="regalamos" />
+			<form russian="дарить, преподносить" prefix="vosotros" spanish="regaláis" />
+			<form russian="дарить, преподносить" prefix="ellos" spanish="regalan" />
+			<form russian="дарить, преподносить" prefix="ustedes" spanish="regalan" />
+
+			<form russian="подари" prefix="tú" spanish="regala" />
+			<form russian="подари" prefix="usted" spanish="regale" />
+			<form russian="подари" prefix="vosotros" spanish="regalad" />
+			<form russian="подари" prefix="ustedes" spanish="regalen" />
+
+			<form russian="не дари" prefix="tú" spanish="no regales" />
+			<form russian="не дари" prefix="usted" spanish="no regale" />
+			<form russian="не дари" prefix="vosotros" spanish="no regaléis" />
+			<form russian="не дари" prefix="ustedes" spanish="no regalen" />
+		</word>
+		<word name="comprar">
+			<form russian="покупать" spanish="comprar" />
+			<form russian="покупать в кредит" spanish="comprar al fiado" />
+		</word>
+		<word name="quitar">
+			<form russian="снимать, убирать" spanish="quitar" />
+			<form russian="снимать, убирать" prefix="Yo" spanish="quito" />
+			<form russian="снимать, убирать" prefix="tú" spanish="quitas" />
+			<form russian="снимать, убирать" prefix="él" spanish="quita" />
+			<form russian="снимать, убирать" prefix="ella" spanish="quita" />
+			<form russian="снимать, убирать" prefix="usted" spanish="quita" />
+			<form russian="снимать, убирать" prefix="nosotros" spanish="quitamos" />
+			<form russian="снимать, убирать" prefix="vosotros" spanish="quitáis" />
+			<form russian="снимать, убирать" prefix="ellos" spanish="quitan" />
+			<form russian="снимать, убирать" prefix="ustedes" spanish="quitan" />
+
+			<form russian="сними" prefix="tú" spanish="quita" />
+			<form russian="сними" prefix="usted" spanish="quite" />
+			<form russian="сними" prefix="vosotros" spanish="quitad" />
+			<form russian="сними" prefix="ustedes" spanish="quiten" />
+
+			<form russian="не снимай" prefix="tú" spanish="no quites" />
+			<form russian="не снимай" prefix="usted" spanish="no quite" />
+			<form russian="не снимай" prefix="vosotros" spanish="no quitéis" />
+			<form russian="не снимай" prefix="ustedes" spanish="no quiten" />
+
+			<form russian="убрать книги со стола" spanish="quitar los libros de la mesa" />
+			<form russian="лишать жизни" spanish="quitar la vida" />
+		</word>
+		<word name="explicar">
+			<form russian="объяснять, разъяснять" spanish="explicar" />
+		</word>
+		<word name="mandar">
+			<form russian="приказывать, поручать" spanish="mandar" />
+			<form russian="прогнать, выпроводить, вытолкать" spanish="mandar a paseo" />
+		</word>
+		<word name="enseñar">
+			<form russian="обучать, преподавать" spanish="enseñar" />
+			<form russian="обучать чтению и письму" spanish="enseñar a leer y escribir" />
+		</word>
+		<word name="limpiar">
+			<form russian="чистить, отчищать" spanish="limpiar" />
+			<form russian="чистить зубы" spanish="limpiar los dientes" />
+			<form russian="отдать в чистку" spanish="dar a limpiar" />
+			<form russian="снять с себя вину" spanish="limpiarse de culpas" />
+			<form russian="вытереться платком" spanish="limpiarse con el pañuelo" />
+		</word>
+		<word name="lavar">
+			<form russian="мыть, умывать" spanish="lavar" />
+			<form russian="мыть руки" spanish="lavarse las manos" />
+			<form russian="мыть лицо" spanish="lavarse la cara" />
+		</word>
+		<word name="prestar">
+			<form russian="предоставлять, давать взаймы" spanish="prestar" />
+			<form russian="придавать очарование" spanish="prestar encanto" />
+			<form russian="уделять внимание" spanish="prestar atención" />
+			<form russian="оказывать помощь" spanish="prestar ayuda" />
+		</word>
+		<word name="dar">
+			<form russian="давать, передавать" spanish="dar" />
+
+			<form russian="вернуть с избытком" spanish="dar de más" />
+			<form russian="отказать, перестать действовать" spanish="no dar más" />
+			<form russian="доставлять удовольствие" spanish="dar gusto" />
+			<form russian="вызывать жажду" spanish="dar sed" />
+			<form russian="удариться головой" spanish="dar de coronilla" />
+		</word>
+		<word name="poner">
+			<form russian="помещать, надевать" spanish="poner" />
+
+<!--
+			<form russian="снимать, убирать" prefix="Yo" spanish="quito" />
+			<form russian="снимать, убирать" prefix="tú" spanish="quitas" />
+			<form russian="снимать, убирать" prefix="él" spanish="quita" />
+			<form russian="снимать, убирать" prefix="ella" spanish="quita" />
+			<form russian="снимать, убирать" prefix="usted" spanish="quita" />
+			<form russian="снимать, убирать" prefix="nosotros" spanish="quitamos" />
+			<form russian="снимать, убирать" prefix="vosotros" spanish="quitáis" />
+			<form russian="снимать, убирать" prefix="ellos" spanish="quitan" />
+			<form russian="снимать, убирать" prefix="ustedes" spanish="quitan" />
+-->
+
+			<form russian="надень" prefix="tú" spanish="pon" />
+			<form russian="надень" prefix="usted" spanish="ponga" />
+			<form russian="надень" prefix="vosotros" spanish="poned" />
+			<form russian="надень" prefix="ustedes" spanish="pongan" />
+
+			<form russian="не надевай" prefix="tú" spanish="no pongas" />
+			<form russian="не надевай" prefix="usted" spanish="no ponga" />
+			<form russian="не надевай" prefix="vosotros" spanish="no pongáis" />
+			<form russian="не надевай" prefix="ustedes" spanish="no pongan" />
+
+			<form russian="послать телеграмму" spanish="poner un telegrama" />
+			<form russian="включить радио" spanish="poner la radio" />
+			<form russian="надеть очки" spanish="ponerse las gafas" />
+		</word>
+		<word name="apagar">
+			<form russian="гасить, тушить" spanish="apagar" />
+			<form russian="выключите свет" prefix="ustedes" spanish="apaguen la luz" />
+		</word>
+		<word name="traer">
+			<form russian="приносить, привозить" spanish="traer" />
+			<form russian="приносить пользу" spanish="traer provecho" />
+			<form russian="утомить" spanish="traer fatigado" />
+			<form russian="приводить примеры" spanish="traer ejemplos" />
+			<form russian="влечь за собой" spanish="traer consigo" />
+		</word>
+		<word name="cerrar">
+			<form russian="закрывать, складывать" spanish="cerrar" />
+
+			<form russian="закрыть дверь" spanish="cerrar la puerta" />
+			<form russian="закрыть скобки" spanish="cerrar el paréntesis" />
+			<form russian="закрыть кавычки" spanish="cerrar las comillas" />
+		</word>
+		<word name="decir">
+			<form russian="сказать, называть" spanish="decir" />
+
+			<form russian="говорить правду" spanish=" decir la verdad" />
+			<form russian="говорить неправду" spanish="decir la mentira" />
+			<form russian="скажите фамилию" prefix="usted" spanish="dígale su apellido" />
+		</word>
+
+	</words>
 </dictionary>

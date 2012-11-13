@@ -1,4 +1,4 @@
-<dictionary version="2012.11.11/5">
+<dictionary version="2012.11.13/11">
     <words>
         <word name="gato">
             <form spanish="el gato" russian="кот" />
@@ -111,10 +111,69 @@
             <form russian="старик" spanish="el viejo" />
             <form russian="старуха" spanish="la vieja" />
         </word>
-
         <word name="mañana">
             <form russian="утро" spanish="la mañana" />
         </word>
+		<word name="palabra">
+			<form russian="слово" spanish="la palabra" />
+			<form russian="игра слов" spanish="juego de palabras" />
+			<form russian="намёки" spanish="medias palabras" />
+			<form russian="в немногих словах, вкратце" spanish="en breves palabras" />
+			<form russian="взвешивать (обдумывать) слова" spanish="medir las palabras" />
+			<form russian="предоставить слово" spanish="dar la palabra" />
+			<form russian="давать слово (обещание)" spanish="empeñar la palabra" />
+			<form russian="не находить слов" spanish="no tener palabras" />
+			<form russian="заговаривать зубы, вводить в заблуждение" spanish="vender palabras" />
+		</word>
+		<word name="ventana">
+			<form russian="окно" spanish="la ventana" />
+			<form russian="быть высокомерным (заносчивым)" spanish="tener ventana de cierzo" />
+			<form russian="смотреть со своей колокольни (перен.)" spanish="hablar desde la ventana" />
+		</word>
+		<word name="disco">
+			<form russian="диск, пластинка" spanish="el disco" />
+		</word>
+		<word name="correo">
+			<form russian="почтальон, почта" spanish="el correo" />
+			<form russian="читать почту" spanish="leer el correo" />
+			<form russian="отправлять (посылать) почтой" spanish="enviar por correo" />
+			<form russian="авиапочта" spanish="correo aéreo" />
+		</word>
+		<word name="luz">
+			<form russian="свет (энергия)" spanish="la luz" />
 
-    </words>
+			<form russian="солнечный свет" spanish="luz solar" />
+			<form russian="дневной свет" spanish="luz natural" />
+			<form russian="рассеянный свет" spanish="luz difusa" />
+			<form russian="освещать (что-либо)" spanish="dar luz" />
+			<form russian="здесь есть свет" spanish="hay luz" />
+			<form russian="светофор" spanish="luz de tráfico" />
+			<form russian="работать при свете" spanish="trabajar con la luz" />
+			<form russian="принеси мне лампу (свечу и т.п.)" spanish="tráeme la luz" />
+			<form russian="увидеть свет, родиться" spanish="ver la luz" />
+		</word>
+		<word name="helado">
+			<form russian="мороженое" spanish="el helado" />
+		</word>
+		<word name="tortilla">
+			<form russian="омлет" spanish="la tortilla" />
+		</word>
+		<word name="apellido">
+			<form russian="фамилия" spanish="el apellido" />
+		</word>
+		<word name="noticia">
+			<form russian="сообщение, известие" spanish="la noticia" />
+			<form russian="последние известия" spanish="noticias de última hora" />
+		</word>
+		<word name="motivo">
+			<form russian="мотив, причина, повод" spanish="el motivo" />
+			<form russian="не без причины" spanish="no sin motivo" />
+			<form russian="привести доводы" spanish="aducir los motivs" />
+		</word>
+		<word name="favor">
+			<form russian="помощь, одолжение, милость" spanish="el favor" />
+			<form russian="будьте любезны" prefix="usted" spanish="haga el favor" />
+		</word>
+
+	</words>
 </dictionary>

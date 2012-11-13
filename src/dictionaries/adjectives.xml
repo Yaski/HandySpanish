@@ -1,4 +1,4 @@
-<dictionary version="2012.11.11/5">
+<dictionary version="2012.11.13/11">
     <words>
         <word name="alto">
             <form russian="высокий" prefix="Juan es" spanish="alto" />
@@ -76,6 +76,9 @@
             <form russian="прозрачный" prefix="ella es" spanish="transparente" />
             <form russian="прозрачный" prefix="ellos son" spanish="transparentes" />
         </word>
+		<word name="deprisa">
+			<form russian="быстро" spanish="deprisa" />
+		</word>
 
-    </words>
+	</words>
 </dictionary>
